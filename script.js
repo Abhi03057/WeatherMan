@@ -46,11 +46,35 @@ document.addEventListener('DOMContentLoaded' , () =>{
      const descriptionDisplay=document.getElementById("description");
      const errorMessage=document.getElementById("ErrorMessage");
 
-    const API_KEY = '8dff08c584a09955f676fd34c350b045';
+    const API_KEY = "8dff08c584a09955f676fd34c350b045";
 
-     getWeathearBtn.addEventListener('click', () =>{
+     getWeathearBtn.addEventListener('click', async () =>{
         const city = cityInput.value.trim();
         if(!city) return;
+
+        try{
+           const WeatherData = await fetchWeatherData(city);
+           displayWeatherData(WeatherData)
+        } catch(error){
+            ShowErrorMessage();
+        }
+
+
      })
+
+     async function fetchWeatherData(city){
+        const url = `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid=${API_KEY}`
+
+        const response = fetch(url);
+     }
+
+     function displayWeatherData(WeatherData){
+
+     }
+
+     function ShowErrorMessage(){
+        weatherInfo.classList.add('hidden');
+        errorMessage.classList.remove('hidden');
+     }
     
 })
