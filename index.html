@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Weather App</title>
+</head>
+<body class="h-screen bg-gray-900 flex justify-center items-center">
+    <div class="container bg-gray-800 w-96 h-96 rounded-lg flex flex-col">
+        <h2 class="text-white mb-3 mt-3 font-medium text-center">Weather App</h2>
+        <div class="inputContainer flex justify-center items-center text-center ">
+            
+            <input id="city-input" type="text" placeholder="Enter City" class="p-2 bg-white rounded-md">
+            <button id="Weather-button" class="bg-red-700 text-white p-1 ml-3 rounded-lg hover:bg-purple-700">Get Weather</button>
+        </div>
+        <div id="WeatherInfo" class="weatherInfo flex justify-center items-center flex-col mt-10 text-white hidden">
+            <h3 id="city-name"></h3>
+            <p id="temperature"></p>
+            <p id="description"></p>
+        </div>
+        <p id="ErrorMessage" class="text-red-500 text-center hidden">Error!!! City Not Found. Enter Valid City name</p>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html> 
